@@ -1,5 +1,6 @@
 import 'package:clone_udemy/pages/home/widgets/app_bar/mobile_app_bar.dart';
 import 'package:clone_udemy/pages/home/widgets/app_bar/web_app_bar.dart';
+import 'package:clone_udemy/pages/home/widgets/sections/top_section.dart';
 import 'package:flutter/material.dart';
 
 import '../../brakpoints.dart';
@@ -24,12 +25,10 @@ class HomePage extends StatelessWidget {
             body: Align(
               alignment: Alignment.topCenter,
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 1400),
-                child: Container(
-                  height: 1000,
-                  color: Colors.red,
-                ),
-              ),
+                  constraints: const BoxConstraints(maxWidth: 1400),
+                  child: ListView(
+                    children: const [TopSection()],
+                  )),
             ));
       },
     );
