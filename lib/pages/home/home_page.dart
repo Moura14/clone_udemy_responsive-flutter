@@ -12,15 +12,25 @@ class HomePage extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
-          appBar: constraints.maxWidth < mobileBreakPoint
-              ? const PreferredSize(
-                  preferredSize: Size(double.infinity, 56),
-                  child: MobileAppBar())
-              : const PreferredSize(
-                  preferredSize: Size(double.infinity, 72), child: WebAppBar()),
-          drawer:
-              constraints.maxWidth < mobileBreakPoint ? const Drawer() : null,
-        );
+            appBar: constraints.maxWidth < mobileBreakPoint
+                ? const PreferredSize(
+                    preferredSize: Size(double.infinity, 56),
+                    child: MobileAppBar())
+                : const PreferredSize(
+                    preferredSize: Size(double.infinity, 72),
+                    child: WebAppBar()),
+            drawer:
+                constraints.maxWidth < mobileBreakPoint ? const Drawer() : null,
+            body: Align(
+              alignment: Alignment.topCenter,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 1400),
+                child: Container(
+                  height: 1000,
+                  color: Colors.red,
+                ),
+              ),
+            ));
       },
     );
   }
