@@ -113,7 +113,43 @@ class TopSection extends StatelessWidget {
             ),
           );
         }
-        return Container();
+        return Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 3.4,
+              child: Image.network(
+                'https://images.pexels.com/photos/574080/pexels-photo-574080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    'Aprenda Flutter com este curso',
+                    style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    'Bora aprender Flutter com o professor Neymar Jr! Cursos por apenas R\$22,90. Qualidade garantida.',
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  CustomSearchField()
+                ],
+              ),
+            )
+          ],
+        );
       },
     );
   }
