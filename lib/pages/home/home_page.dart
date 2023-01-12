@@ -1,6 +1,7 @@
 import 'package:clone_udemy/pages/home/widgets/app_bar/mobile_app_bar.dart';
 import 'package:clone_udemy/pages/home/widgets/app_bar/web_app_bar.dart';
 import 'package:clone_udemy/pages/home/widgets/sections/advantages_sections.dart';
+import 'package:clone_udemy/pages/home/widgets/sections/courses_section.dart';
 import 'package:clone_udemy/pages/home/widgets/sections/top_section.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,11 @@ class HomePage extends StatelessWidget {
               child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 1400),
                   child: ListView(
-                    children: const [TopSection(), AdvantagesSection()],
+                    children: const [
+                      TopSection(),
+                      AdvantagesSection(),
+                      CoursesSection()
+                    ],
                   )),
             ));
       },
